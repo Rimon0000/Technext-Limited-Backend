@@ -15,8 +15,9 @@ const getAllUserFromDb = async () => {
 };
 
 //get
-const getSingleUserFromDb = async (id: number) => {
-  const result = await User.findOne({ id: id });
+const getSingleUserFromDb = async (id: string) => {
+  const numericId = parseInt(id);
+  const result = await User.findOne({ id: numericId });
   return result;
 };
 
