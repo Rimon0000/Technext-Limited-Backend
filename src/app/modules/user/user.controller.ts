@@ -6,7 +6,7 @@ const createUser = async(req: Request, res: Response) =>{
     res.status(200).json({
         success: true,
         message: "User is created successfully",
-        data: result
+        user: result
     })
 }
 
@@ -16,11 +16,23 @@ const getAllUser = async(req: Request, res: Response) =>{
     res.status(200).json({
         success: true,
         message: "User are retrieved successfully",
-        data: result
+        user: result
+    })
+}
+
+//get single
+const getSingleUser = async(req: Request, res: Response) =>{
+    const id = req.params.id
+    const result = await userServices.getSingleUserFromDb(id)
+    res.status(200).json({
+        success: true,
+        message: "User is retrieved successfully",
+        user: result
     })
 }
 
 export const UserControllers = {
     createUser,
     getAllUser,
+    getSingleUser
 }

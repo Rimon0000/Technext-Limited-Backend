@@ -9,6 +9,7 @@ const router = express.Router()
 //route will call controller function
 router.post('/',validateRequest(userValidations.createUserValidationSchema), UserControllers.createUser)
 router.get('/', UserControllers.getAllUser)
+router.get('/:id', UserControllers.getSingleUser)
 
 
 

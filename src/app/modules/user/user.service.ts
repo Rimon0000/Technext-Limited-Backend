@@ -8,9 +8,15 @@ const createUserFromDb = async (payload: TUser) => {
   return result;
 };
 
-//get
+//get all
 const getAllUserFromDb = async () => {
   const result = await User.find();
+  return result;
+};
+
+//get
+const getSingleUserFromDb = async (id: number) => {
+  const result = await User.findOne({ id: id });
   return result;
 };
 
@@ -20,4 +26,5 @@ const getAllUserFromDb = async () => {
 export const userServices = {
   createUserFromDb,
   getAllUserFromDb,
+  getSingleUserFromDb
 };

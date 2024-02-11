@@ -4,6 +4,7 @@ import { TUser } from './user.interface';
 
 // Define the Mongoose schema based on the TUser interface
 const userSchema = new Schema<TUser>({
+  id: {type: Number},
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   maidenName: { type: String },
